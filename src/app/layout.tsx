@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
-import "@/styles/globals.css";
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils';
+import '@/styles/globals.css';
+import type { Metadata } from 'next';
+import { Inter as FontSans } from 'next/font/google';
 
 const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
 
 export const metadata: Metadata = {
-  title: "Media Wave",
-  description: "Wave of Media for your flex needs",
+  title: 'Media Wave',
+  description: 'Wave of Media for your flex needs',
 };
 
 export default function RootLayout({
@@ -19,11 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+    <html lang='en' suppressHydrationWarning>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
           fontSans.variable
-        )}>{children}</body>
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
